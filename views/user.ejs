@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ini halaman User</h1>
+    <a href="/"><button>Dashboard</button></a>
+    <form action="/user/post" method="POST">
+      <table style="margin-bottom: 5rem;">
+        <td>
+          <td><label>nama</label></td>
+          <td>:</td>
+          <td><input type="text" name="nama"></td>
+        </tr>
+         <td>
+          <td><label>hobi</label></td>
+          <td>:</td>
+          <td><input type="text" name="hobi"></td>
+        </tr>
+         <td>
+          <td><label>sekolah</label></td>
+          <td>:</td>
+          <td><input type="text" name="sekolah"></td>
+        </tr>
+  <tr>
+    <td></td>
+    <td><button type="submit">Simpan</button></td>
+    <td></td>
+  </tr>
+      </table>
+    </form>
+    <center>
+      <table border="1">
+        <tr>
+          <th>no</th>
+          <th>nama</th>
+          <th>hobi</th>
+          <th>sekolah</th>
+          <th>dibuat</th>
+        </tr>
+        <% var nomer = 1 %> <% response.forEach(user => { %>
+        <tr>
+          <td><%= nomer++ %></td>
+          <td><%= user.nama %></td>
+          <td><%= user.hobi %></td>
+          <td><%= user.sekolah %></td>
+          <td><%= user.createdAt %></td>
+        </tr>
+        <% }) %>
+      </table>
+    </center>
+  </body>
+</html>
